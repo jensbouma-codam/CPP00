@@ -1,13 +1,13 @@
 # Program variables
 NAME		= megaphone
 FILES		= megaphone.cpp
-
+INC_DIR		= -I include
 # Compilation variables
-SRC_DIR		= src
+SRC_DIR		= ./src
 BUILD_DIR	= build
 TARGET		= bin
 CC			= g++
-CFLAGS		= -Wall -Wextra -Werror -std=c++98 -O2
+CFLAGS		= -Wall -Wextra -Werror -std=c++98
 SRC			= $(addprefix $(SRC_DIR)/, $(FILES))
 OBJECTS		= $(SRC:%.cpp=$(BUILD_DIR)/%.o)
 
@@ -22,6 +22,9 @@ $(BUILD_DIR)/%.o:%.cpp
 	@mkdir -p $(dir $@)
 	@printf "%-25.25s%s\n" "Build" "$(notdir $<)"
 	@$(CC) $(CFLAGS) $(INC) -c $< -o $@ 
+
+debug: CFLAGS += -g
+debug: re
 
 clean:
 	@rm -rf $(BUILD_DIR)
