@@ -3,7 +3,7 @@ NAME		= megaphone
 FILES		= megaphone.cpp
 INC_DIR		= -I include
 # Compilation variables
-SRC_DIR		= ./src
+SRC_DIR		= src
 BUILD_DIR	= build
 TARGET		= bin
 CC			= g++
