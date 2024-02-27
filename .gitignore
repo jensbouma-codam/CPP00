@@ -1,7 +1,5 @@
 .DS_Store
 .vscode/settings.json
 .vscode/launch.json
-.gitignore
 */bin/*
-.gitignore
 */build/*
